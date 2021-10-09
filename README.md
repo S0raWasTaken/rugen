@@ -1,4 +1,4 @@
-# rugen
+# Rugen
 Simple CLI password generator made in RUST
 
 ## USAGE:
