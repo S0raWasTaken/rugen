@@ -3,8 +3,8 @@ Simple CLI password generator made in RUST
 
 ## USAGE:
 ```bash
-rugen -s <Password Size> -t <Password Type>
 # TYPES: lowest, low, medium, high
+rugen -s <Password Size> -t <Password Type>
 ```
 
 ## Build instructions:
