@@ -8,7 +8,7 @@ rugen -s <Password Size> -t <Password Type>
 ```
 
 ## Build instructions:
-> I will assume you already have RUST installed on your system
+> I will assume you already have RUST installed in your system
 ```bash
 git clone https://github.com/S0raWasTaken/rugen
 cd rugen
