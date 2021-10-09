@@ -14,7 +14,7 @@ git clone https://github.com/S0raWasTaken/rugen
 cd rugen
 cargo build --release
 ```
-**OPTIONAL**: Installing the binary to a binary folder
+**OPTIONAL**: Installing the binary to a bin folder
 ```bash
 sudo mv ./target/release/rugen /usr/local/bin
 ```
