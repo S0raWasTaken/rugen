@@ -1,22 +1,22 @@
 use rand::{thread_rng, Rng};
 
-pub fn generate_pw(level: &str, char_count: usize) -> Result<(), String> {
-    let lower_case = "abcdefghijklmnopqrstuvwxyzç";
-    let upper_case = "ABCDEFGHIJKLMNOPQRSTUVWXYZÇ";
-    let numbers = "0123456789";
-    let special = "!@#$%&*()[]{}:;?/\\=+-_";
+const LOWER_CASE: &str = "abcdefghijklmnopqrstuvwxyzç";
+const UPPER_CASE: &str = "ABCDEFGHIJKLMNOPQRSTUVWXYZÇ";
+const NUMBERS: &str = "0123456789";
+const SPECIAL: &str = "!@#$%&*()[]{}:;?/\\=+-_";
 
+pub fn generate_pw(level: &str, char_count: usize) -> Result<(), String> {
     match level {
         "lowest" => {
             for _ in 1..char_count {
-                print!("{}", random_char(lower_case)?);
+                print!("{}", random_char(LOWER_CASE)?);
             }
         }
         "low" => {
             for _ in 1..char_count {
                 match thread_rng().gen_range(0..2) {
-                    0 => print!("{}", random_char(lower_case)?),
-                    1 => print!("{}", random_char(numbers)?),
+                    0 => print!("{}", random_char(LOWER_CASE)?),
+                    1 => print!("{}", random_char(NUMBERS)?),
                     _ => {
                         return Err(String::from(
                             "Program malfunction: gen_range() index out of bounds",
@@ -28,9 +28,9 @@ pub fn generate_pw(level: &str, char_count: usize) -> Result<(), String> {
         "medium" => {
             for _ in 1..char_count {
                 match thread_rng().gen_range(0..3) {
-                    0 => print!("{}", random_char(lower_case)?),
-                    1 => print!("{}", random_char(numbers)?),
-                    2 => print!("{}", random_char(upper_case)?),
+                    0 => print!("{}", random_char(LOWER_CASE)?),
+                    1 => print!("{}", random_char(NUMBERS)?),
+                    2 => print!("{}", random_char(UPPER_CASE)?),
                     _ => {
                         return Err(String::from(
                             "Program malfunction: gen_range() index out of bounds",
@@ -42,10 +42,10 @@ pub fn generate_pw(level: &str, char_count: usize) -> Result<(), String> {
         "high" => {
             for _ in 1..char_count {
                 match thread_rng().gen_range(0..4) {
-                    0 => print!("{}", random_char(lower_case)?),
-                    1 => print!("{}", random_char(numbers)?),
-                    2 => print!("{}", random_char(upper_case)?),
-                    3 => print!("{}", random_char(special)?),
+                    0 => print!("{}", random_char(LOWER_CASE)?),
+                    1 => print!("{}", random_char(NUMBERS)?),
+                    2 => print!("{}", random_char(UPPER_CASE)?),
+                    3 => print!("{}", random_char(SPECIAL)?),
                     _ => {
                         return Err(String::from(
                             "Program malfunction: gen_range() index out of bounds",
